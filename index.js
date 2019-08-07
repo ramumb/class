@@ -1,25 +1,24 @@
 'use strict';
 
 var assignIn = require('lodash/assignIn');
-var noop = require('lodash/noop');
 var concat = require('lodash/concat');
-//var _wrap = require('lodash/wrap');
+var noop = require('lodash/noop');
 
 /**
- * This is a port of the PrototypeJS method stripTags.
- * It strips a string of any HTML tags.
- * @param {string}  A string from which to strip HTML tags
- * @return {string} The result of the function
+ * This is a port of the PrototypeJS class-based OOP system.
+ * @param {class} The optional superclass to inherit methods from...
+ * @param {object} An object whose properties will be "mixed-in" to the new
+ *	class. Any number of mixins can be added; later mixins take precedence
+ * @return {class} The class that was created
  */
 
-/*
 var IS_DONTENUM_BUGGY = (function() {
 	for (var p in { toString: 1 }) {
 		// check actual property name, so that it works with augmented Object.prototype
 		if (p === 'toString') return false;
 	}
 	return true;
-})();*/
+})();
 
 function getArgs(fn) {
 	var args = fn.toString().match(/^[\s\(]*function[^(]*\(([^)]*)\)/)[1]
@@ -28,28 +27,12 @@ function getArgs(fn) {
 	return args.length == 1 && !args[0] ? [] : args;
 };
 
-/*function update(array, args) {
-	var arrayLength = array.length, length = args.length;
-	while (length--) array[arrayLength + length] = args[length];
-	return array;
-}*/
-
 function wrap(fn, wrapper) {
 	return function() {
 		var a = concat([fn.bind(this)], arguments);
 		return wrapper.apply(this, a);
 	}
 };
-
-/*function mixin(destination, source) {
-	for (var property in source)
-		destination[property] = source[property];
-	return destination;
-};*/
-
-/*var subclass = noop;*/
-
-/*function empty() {};*/
 
 function extend(source) {
 	var ancestor = this.superclass && this.superclass.prototype,
@@ -58,13 +41,13 @@ function extend(source) {
 	// IE6 doesn't enumerate `toString` and `valueOf` (among other built-in `Object.prototype`) properties,
 	// Force copy if they're not Object.prototype ones.
 	// Do not copy other Object.prototype.* for performance reasons
-	/*if (IS_DONTENUM_BUGGY) {
+	if (IS_DONTENUM_BUGGY) {
 		if (source.toString != Object.prototype.toString)
 			properties.push("toString");
 
 		if (source.valueOf != Object.prototype.valueOf)
 			properties.push("valueOf");
-	}*/
+	}
 
 	for (var i = 0, length = properties.length; i < length; i++) {
 		var property = properties[i], value = source[property];
