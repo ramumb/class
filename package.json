@@ -1,6 +1,6 @@
 {
   "name": "@ramumb/class",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A port of PrototypeJS's class-based OOP system.",
   "main": "index.js",
   "scripts": {
