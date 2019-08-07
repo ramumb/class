@@ -1,0 +1,40 @@
+{
+  "name": "@ramumb/class",
+  "version": "0.0.1",
+  "description": "A port of PrototypeJS's class-based OOP system.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --reporter spec",
+    "cover": "node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha -- -R spec test/*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ramumb/class.git"
+  },
+  "keywords": [
+    "class",
+    "prototype",
+    "inheritance",
+    "constructor",
+    "extend",
+    "subclass",
+    "sub-class",
+    "sub_class",
+    "oop"
+  ],
+  "author": "Reginald Mullin <ramumb@yahoo.com> (http://www.reginaldmullin.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ramumb/class/issues"
+  },
+  "homepage": "https://github.com/ramumb/class#readme",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "coveralls": "^3.0.5",
+    "istanbul": "^0.4.5",
+    "mocha": "^5.2.0"
+  },
+  "dependencies": {
+    "lodash": "^4.17.15"
+  }
+}
