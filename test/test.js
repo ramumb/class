@@ -74,7 +74,7 @@ describe('Class', function() {
             }
           };
               
-          // the first argument isn't a class object, so there is no inheritance ...
+          // the first argument isn't a class object, so there is no inheritance...
           // simply mix in all the arguments as methods:
           var Person = new Class(Vulnerable, {
             initialize: function() {
